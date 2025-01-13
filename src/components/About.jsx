@@ -83,7 +83,7 @@ function About() {
                I'm from India
               </p>
               <p className="text-[#afb0b6] text-base font-generalsans">
-                Based in Indore where foody people lives 
+                Based in heart of India, Indore where foody people live. My hobbies include playing cricket watching anime and travelling,Always ready to interect and build network. 
               </p>
          
               
