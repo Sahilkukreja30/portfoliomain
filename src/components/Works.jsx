@@ -58,12 +58,12 @@ const Works = () => {
             
             <a href={currProject.href} target='_blank' className='flex items-center cursor-pointer z-10 gap-2 text-white-600'>
               <p>Check live site</p>
-              <img src="src/assets/arrow-up.png" alt="arrow up" className='w-3 h-3' onMouseEnter={mouseEnter} onMouseLeave={mouseLeave} ref={arrowRef} />
+              <img src="/assets/arrow-up.png" alt="arrow up" className='w-3 h-3' onMouseEnter={mouseEnter} onMouseLeave={mouseLeave} ref={arrowRef} />
             </a>
           </div>
-          <div className='flex justify-between z-50'>
-            <button className='w-10 h-10 p-3 cursor-pointer active:scale-95 transition-all rounded-full arrow-gradient;'><img src="src/assets/left-arrow.png" alt="left arrow" onClick={()=>handleClick('previous')}/></button>
-            <button className='w-10 h-10 p-3 cursor-pointer active:scale-95 transition-all rounded-full arrow-gradient;'><img src="src/assets/right-arrow.png" alt="right arrow" onClick={()=>handleClick('next')} /></button>
+          <div className='flex w-full h-full justify-between z-50'>
+            <button className='w-10 h-10 p-3 cursor-pointer active:scale-95 transition-all rounded-full arrow-gradient;'><img src="/assets/left-arrow.png" alt="left arrow" onClick={()=>handleClick('previous')}/></button>
+            <button className='w-10 h-10 p-3 cursor-pointer active:scale-95 transition-all rounded-full arrow-gradient;'><img src="/assets/right-arrow.png" alt="right arrow" onClick={()=>handleClick('next')} /></button>
           </div>
         </div>
         <div className='border border-black-300 bg-black-200 rounded lg h-96 md:h-full '>

@@ -30,9 +30,6 @@ module.exports = {
       screens: {
         xs: "450px",
       },
-      backgroundImage: {
-        "hero-pattern": "url('src/assets/pexels-frank-cone-140140-3214110.jpg')",
-      },
     },
   },
   plugins: [],

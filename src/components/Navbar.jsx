@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { styles } from "../styles";
 import { navLinks } from "../constants";
-import { menu, close } from "../assets";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger)
@@ -43,7 +42,7 @@ const Navbar = () => {
         </ul>
         <div className="flex flex-1 justify-end items-center sm:hidden">
           <img
-            src={toggle ? close : menu}
+            src={toggle ? "/assets/close.svg" : "/assets/menu.svg"}
             alt="Menu"
             className="w-[28px] h-[28px] cursor-pointer object-contain"
             onClick={() => {

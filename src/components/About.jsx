@@ -3,9 +3,7 @@ import React, { useEffect, useRef } from "react";
 import Globe from "react-globe.gl";
 import { motion } from "framer-motion";
 import { textVariant, fadeIn } from "../utils/motion";
-import { Tilt } from "react-tilt";
 import { SectionWrapper } from "../hoc";
-import { s } from "framer-motion/client";
 import { BallCanvas } from './canvas'
 import {technologies} from '../constants/index'
 import { styles } from '../styles'
@@ -43,7 +41,7 @@ function About() {
             
             <div className="grid-container">
                 <img
-                  src="src\assets\main.jpg"
+                  src="\assets\main.jpg"
                   alt="grid 1"
                   className="w-fit sm:h-[276px] mb-3 h-fit object-contain rounded-full self-center"
                 />
@@ -99,7 +97,7 @@ function About() {
           <div className="grid-container">
           
           <img
-                src="src\assets\grid3.png"
+                src="\assets\grid3.png"
                 alt="grid-3"
                 className="w-full sm:h-[266px] h-fit object-contain"
               />
@@ -121,7 +119,7 @@ function About() {
           <div className="grid-container">
          
           <img
-                src="src\assets\grid4.png"
+                src="\assets\grid4.png"
                 alt="grid-4"
                 className="w-full md:h-[126px] sm:h-[276px] h-fit object-cover sm:object-top"
               />
@@ -132,7 +130,7 @@ function About() {
                 <div className="copy-container" onClick={handleClick}>
                   <img
                     src={
-                      copyState ? "src/assets/tick.svg" : "src/assets/copy.svg"
+                      copyState ? "/assets/tick.svg" : "/assets/copy.svg"
                     }
                     alt="copy"
                   />
@@ -141,9 +139,9 @@ function About() {
                   </p>
                 </div>
                 <div className="flex gap-10 justify-center items-center w-full h-[100px]">
-                  <a href="https://github.com/Sahilkukreja30" target="_blank"><img src="src/assets/github.svg" alt="github" className="w-full h-[40px] object-cover" /></a>
-                  <a href="https://www.instagram.com/sahilkukreja_30/" target="_blank"><img src="src/assets/instagram.svg" alt="github" className="w-full h-[40px] object-cover" /></a>
-                  <a href="https://www.linkedin.com/in/sahil-kukreja-943993289/" target="_blank"><img src="src/assets/linkedin.svg" alt="github" className="w-full h-[38px] object-cover" /></a>
+                  <a href="https://github.com/Sahilkukreja30" target="_blank"><img src="/assets/github.svg" alt="github" className="w-full h-[40px] object-cover" /></a>
+                  <a href="https://www.instagram.com/sahilkukreja_30/" target="_blank"><img src="/assets/instagram.svg" alt="github" className="w-full h-[40px] object-cover" /></a>
+                  <a href="https://www.linkedin.com/in/sahil-kukreja-943993289/" target="_blank"><img src="/assets/linkedin.svg" alt="github" className="w-full h-[38px] object-cover" /></a>
                 </div>
               </div>
               

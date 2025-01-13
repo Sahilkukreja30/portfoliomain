@@ -135,14 +135,14 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#243748", en
 }
 
 .background-masking{
-  background-image: url('src/assets/techTextBg.jpg');
+  background-image: url('/assets/techTextBg.jpg');
   background-position: 200px;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
 }
 
 .hero-pattern{
-  background-image: url('src/assets/pexels-jmueller-7600379.jpg');
+  background-image: url('/assets/bgmain.jpg');
   background-size:contain;
   background-position: center;
   background-repeat:repeat;
