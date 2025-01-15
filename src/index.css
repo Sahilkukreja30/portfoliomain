@@ -11,6 +11,27 @@
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
   color-scheme: dark;
+  cursor: none;
+}
+
+.card1{
+  box-shadow: 0 4px 10px rgba(229, 64, 64, 0.5);
+}
+
+.card2{
+  box-shadow: 0 4px 10px rgba(64, 150, 229, 0.5);
+}
+
+.card3{
+  box-shadow: 0 4px 10px rgba(64, 229, 129, 0.5);
+}
+
+.card4{
+  box-shadow: 0 4px 10px rgba(229, 229, 64, 0.5);
+}
+
+.project{
+  font-family: "Dosis";
 }
 
 .hash-span {
@@ -146,12 +167,13 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#243748", en
   background-size:contain;
   background-position: center;
   background-repeat:repeat;
+  opacity: 0.8;
 }
 @keyframes mulShdSpin {
   0%,
   100% {
     box-shadow: 0em -2.6em 0em 0em #ffffff,
-      1.8em -1.8em 0 0em rgba(255, 255, 255, 0.2),
+      1.8em -1.8em 0 0em rgba(77, 65, 65, 0.2),
       2.5em 0em 0 0em rgba(255, 255, 255, 0.2),
       1.75em 1.75em 0 0em rgba(255, 255, 255, 0.2),
       0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
@@ -256,7 +278,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#243748", en
     @apply sm:px-10 px-5;
   }
   .grid-container {
-    @apply w-full h-full border border-black-300 bg-black-200 rounded-lg sm:p-7 p-4 flex flex-col gap-5;
+    @apply w-full h-full border border-black-300 bg-black-200 bg-opacity-20 backdrop-blur-[3px] rounded-lg sm:p-7 flex flex-col gap-5;
   }
   .copy-container {
     @apply cursor-pointer flex justify-center items-center gap-2;

@@ -8,9 +8,9 @@ import { useEffect, useState } from 'react';
 
 function App() {
   return (
-    <BrowserRouter id="content-wrapper">
+    <BrowserRouter>
       <div className="hero-pattern relative z-0" id='smooth-content'>
-        <div className="">
+        <div>
           <Navbar />
           <Hero />
         </div>

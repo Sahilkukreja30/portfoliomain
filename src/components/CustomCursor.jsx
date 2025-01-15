@@ -23,7 +23,7 @@ const CustomCursor = () => {
     const onMouseLeave = () => {
       gsap.to(cursor, {
         scale: 1,
-        backgroundColor: '#e54040', 
+        backgroundColor: 'white', 
         duration: 0.3,
       });
     };
@@ -57,7 +57,7 @@ const CustomCursor = () => {
         left: '0',
         width: '30px',
         height: '30px',
-        backgroundColor: '#e54040', 
+        backgroundColor: 'white', 
         borderRadius: '50%',
         pointerEvents: 'none',
         transform: 'translate(-50%, -50%)',
