@@ -21,8 +21,8 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <p className="text-white text-[22px] cursor-pointer font-bold flex">
-            Sahil {" "} | Kukreja
+          <p className="text-white text-[22px] cursor-pointer flex mainTxt">
+            Sahil Kukreja
           </p>
         </Link>
         <ul className="list-none hidden sm:flex flex-row gap-10">
