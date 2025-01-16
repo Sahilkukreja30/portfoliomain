@@ -2,6 +2,7 @@ import './App.css'
 import { BrowserRouter } from 'react-router-dom'
 import {About,Contact,Hero,Navbar,Works,StarsCanvas,CustomCursor} from '../src/components';
 import { useEffect, useState } from 'react';
+import Footer from './components/Footer';
 
 
 
@@ -10,10 +11,8 @@ function App() {
   return (
     <BrowserRouter>
       <div className="hero-pattern relative z-0" id='smooth-content'>
-        <div>
-          <Navbar />
-          <Hero />
-        </div>
+        <Navbar />
+        <Hero />
         <About />
         <Works />
         <CustomCursor />
@@ -21,6 +20,7 @@ function App() {
           <Contact />
           <StarsCanvas />
         </div>
+        <Footer/>
       </div>
     </BrowserRouter>
   )

@@ -1,13 +1,14 @@
 
 
 import React, { useEffect, useRef } from 'react'
-import { useGLTF } from '@react-three/drei'
+import { useGLTF, useTexture } from '@react-three/drei'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 export function ComputersCanvas (props) {
   const modelRef = useRef()
+  const vsTexture = useTexture("/assets/vscode.jpg")
   const { nodes, materials} = useGLTF('/gaming_desktop_pc_blend_file.glb')
   useEffect(()=>{
     gsap.to(modelRef.current.scale,{
@@ -2522,7 +2523,9 @@ export function ComputersCanvas (props) {
         position={[-1.362, 3.001, 3.004]}
         rotation={[Math.PI / 2, 0.07, -Math.PI / 2]}
         scale={[3.316, 3.316, 3.481]}
-      />
+      >
+        <meshStandardMaterial map={vsTexture} />
+      </mesh>
       <mesh
         castShadow
         receiveShadow

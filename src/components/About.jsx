@@ -20,8 +20,8 @@ function About() {
   const handleMouseMove = (e) => {
     const card = e.currentTarget;
     const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left; // X position within the card
-    const y = e.clientY - rect.top; // Y position within the card
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top; 
 
     // Update CSS variables for glow position
     card.style.setProperty("--mouse-x", `${x}px`);
@@ -31,10 +31,10 @@ function About() {
 
   const handleMouseLeave = (e) => {
     const card = e.currentTarget;
-    card.classList.remove("active"); // Remove the active class on mouse leave
+    card.classList.remove("active");
   };
   return (
-    <section className="c-space mt-20 h-[170vh]">
+    <section className="c-space mt-20 xl:h-[170vh]">
       <div className="grid xl:grid-cols-2 xl:grid-rows-1 md:grid-cols-2 grid-cols-1 gap-5 h-full">
         <motion.div
           variants={fadeIn("right", "spring", 0.25, 0.4)}

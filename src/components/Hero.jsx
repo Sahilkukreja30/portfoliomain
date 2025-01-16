@@ -102,6 +102,7 @@ const Hero = () => {
             scale={isSmall ? 0.3 : isMobile ? 0.8 : 1.2}
             rotation={[-3.9,-1.58,2.3]}
             />
+            <pointLight intensity={10} position={[-2,-1,0]}/>
             <ambientLight intensity={1} />
             <directionalLight intensity={2} position={[10, 8, 10]} />
             <group>
@@ -126,17 +127,9 @@ const Hero = () => {
 
       <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center" >
         <a href="#about" >
-          <div ref={scrollRef} className="w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-center p-2">
-            <motion.div
-              animate={{ y: [0, 24, 0] }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                repeatType: "loop",
-              }}
-              className="w-3 h-3 rounded-full bg-secondary mb-1 scrollRef"
-            />
-          </div>
+          <motion.div animate={{y:[0,12,0]}} transition={{duration:1.5,repeat:Infinity,repeatType:"loop"}} ref={scrollRef} className="w-[80px] h-[80px] flex justify-center items-center">
+             <img src="/assets/minus1.svg" alt="Arrow down" className="h-[60px] w-[60px] mt-12" />
+          </motion.div>
         </a>
       </div>
     </section>

@@ -6,6 +6,7 @@ import {styles} from '../styles'
 import { SectionWrapper } from '../hoc'
 import { EarthCanvas } from './canvas'
 import { slideIn } from '../utils/motion'
+import { Tilt } from 'react-tilt'
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({name: '', email: '', message: ''})
@@ -57,7 +58,8 @@ const Contact = () => {
       );
   }
   return (
-    <div className={`${styles.padding} mx-auto xl:mt-20 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden`}>
+    <>
+    <div className={`${styles.padding} mx-auto xl:flex-row flex-col-reverse flex gap-10 overflow-hidden`}>
       <motion.div variants={slideIn("left","ease-in",0.2,1)} className='flex-[0.75] p-8 rounded-xl'>
         <p className={`${styles.sectionSubText} text-center`}>Get in touch</p>
         <p className={`${styles.sectionHeadText} text-center`}>Contact</p>
@@ -110,11 +112,23 @@ const Contact = () => {
       </motion.div>
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
-        className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'
+        className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px] flex justify-center items-center'
       >
-        <EarthCanvas />
+        <Tilt>
+        <div options={{scale:0.5, max:1}} className='flex flex-col justify-center h-[350px] w-[280px] rounded-xl bg-white-800 shadow-xl'>
+          <img src="/assets/intro.jpg" alt="image" className='h-[270px] w-[250px] ml-4 shadow-card mb-4 rounded-lg' />
+          <p className='contact font-semibold text-black-600 text-xl text-right mr-3'>Let's talk</p>
+        </div>
+
+        </Tilt>
       </motion.div>
     </div>
+    <div className='w-full mb-4'>
+      <marquee behavior="scroll" scrollamount="20" direction="right">
+        <p className='project text-5xl'>Thank you for visiting</p>
+      </marquee>
+      </div>
+    </>
   )
 }
 
