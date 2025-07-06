@@ -5,7 +5,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 const PythonLogo = (props) => {
     const modelRef = useRef()
-    const model = useGLTF('/python.glb')
+    const {scene} = useGLTF('/python.glb')
     useEffect(()=>{
       gsap.to(modelRef.current.position,{
         z:10,
@@ -29,9 +29,7 @@ const PythonLogo = (props) => {
       })
     })
   return (
-    <mesh {...props} ref={modelRef}>
-        <primitive object={model.scene} />
-    </mesh>
+    <primitive object={scene} {...props} ref={modelRef} />
   )
 }
 

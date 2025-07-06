@@ -5,7 +5,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 const ReactLogo = (props) => {
     const modelRef = useRef()
-    const model = useGLTF('/react_logo_circle.glb')
+    const {scene} = useGLTF('/react_logo_circle.glb')
     useEffect(()=>{
       gsap.to(modelRef.current.position,{
         z:10,
@@ -18,9 +18,7 @@ const ReactLogo = (props) => {
       })
     })
   return (
-    <mesh {...props} ref={modelRef}>
-        <primitive object={model.scene} />
-    </mesh>
+    <primitive object={scene} {...props} ref={modelRef} />
   )
 }
 

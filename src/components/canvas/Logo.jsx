@@ -31,18 +31,7 @@ export function Logo(props) {
       }
     })
   })
-  const { nodes, materials } = useGLTF('/javascript_1.glb')
+  const { scene } = useGLTF('/javascript_1.glb')
   return (
-    <group {...props} dispose={null} ref={modelRef}>
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Object_2.geometry}
-        material={materials.mat_3220964}
-        rotation={[-Math.PI / 2, 0, 0]}
-      />
-    </group>
-  )
-}
-
-useGLTF.preload('/javascript_1.glb')
+    <primitive object={scene} {...props} ref={modelRef} />
+  )}

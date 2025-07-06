@@ -1,8 +1,8 @@
 import './App.css'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter} from 'react-router-dom'
 import {About,Contact,Hero,Navbar,Works,StarsCanvas,CustomCursor} from '../src/components';
-import { useEffect, useState } from 'react';
 import Footer from './components/Footer';
+
 
 
 
@@ -10,7 +10,7 @@ import Footer from './components/Footer';
 function App() {
   return (
     <BrowserRouter>
-      <div className="hero-pattern relative z-0" id='smooth-content'>
+      <div className="hero-pattern w-full relative z-0">
         <Navbar />
         <Hero />
         <About />

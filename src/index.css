@@ -9,9 +9,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  scroll-behavior: smooth;
   color-scheme: dark;
-  cursor: none;
 }
 
 .card1{
@@ -33,6 +31,7 @@
 .project{
   font-family: "Dosis";
 }
+
 
 .mainTxt{
   font-family: "Pacifico";
@@ -171,7 +170,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#243748", en
 .hero-pattern{
   background-image: url('/assets/bgmain.jpg');
   background-size:contain;
-  background-position: center;
+  background-position:center;
   background-repeat:repeat;
   opacity: 0.8;
 }

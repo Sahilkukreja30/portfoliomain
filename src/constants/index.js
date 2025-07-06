@@ -62,6 +62,12 @@ const technologies = [
       id: "contact",
       title: "Contact",
     },
+    {
+      id: "resume",
+      title: "Resume",
+      external: true,
+      href: "/Sahilresume.pdf"
+    }
   ];
   export const myProjects = [
     {

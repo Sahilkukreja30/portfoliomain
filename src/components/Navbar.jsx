@@ -26,19 +26,29 @@ const Navbar = () => {
           </p>
         </Link>
         <ul className="list-none hidden sm:flex flex-row gap-10">
-          {navLinks.map((link) => (
-            <li
-              key={link.id}
-              className={`${
-                active === link.id ? "text-orange-500" : "text-secondary"
-              } hover:text-orange-500 text-[18px] font-medium`}
-              onClick={() => {
-                setActive(link.id);
-              }}
+        {navLinks.map((link) => (
+        <li
+          key={link.id}
+          className={`${
+            active === link.id ? "text-orange-500" : "text-secondary"
+          } hover:text-orange-500 text-[18px] font-medium`}
+          onClick={() => {
+            setActive(link.id);
+          }}
+        >
+          {link.external ? (
+            <a
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <a href={`#${link.id}`}>{link.title}</a>
-            </li>
-          ))}
+              {link.title}
+            </a>
+          ) : (
+            <a href={`#${link.id}`}>{link.title}</a>
+          )}
+        </li>
+      ))}
         </ul>
         <div className="flex flex-1 justify-end items-center sm:hidden">
           <img

@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
+import { useMediaQuery } from 'react-responsive';
+import { div } from 'framer-motion/client';
 
 const CustomCursor = () => {
+  const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
   useEffect(() => {
     const cursor = document.getElementById('custom-cursor');
     const onMouseMove = (e) => {
@@ -49,7 +52,8 @@ const CustomCursor = () => {
   }, []);
 
   return (
-    <div
+    <>
+      {isMobile ? <div></div> : <div
       id="custom-cursor"
       style={{ 
         position: 'fixed',
@@ -64,7 +68,8 @@ const CustomCursor = () => {
         zIndex: '9999', 
         mixBlendMode: 'difference',
       }}
-    ></div>
+    ></div>}
+    </>
   );
 };
 

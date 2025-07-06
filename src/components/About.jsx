@@ -1,12 +1,10 @@
-import { data } from "autoprefixer";
 import React, { useEffect, useRef } from "react";
 import Globe from "react-globe.gl";
-import { motion } from "framer-motion";
-import { textVariant, fadeIn } from "../utils/motion";
 import { SectionWrapper } from "../hoc";
 import { BallCanvas } from "./canvas";
 import { technologies } from "../constants/index";
-import { styles } from "../styles";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 function About() {
   const [copyState, setCopyState] = React.useState(false);
@@ -17,13 +15,36 @@ function About() {
       setCopyState(false);
     }, 2000);
   };
+  const aboutRef = useRef(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const ctx = gsap.context(() => {
+      gsap.fromTo(aboutRef.current, {
+        opacity: 0,
+        y: 60,
+      }, {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: aboutRef.current,
+          start: "top 60%",
+          end: "bottom 80%",
+          toggleActions: "play none none reverse",
+        },
+      });
+    }, aboutRef);
+    return () => ctx.revert(); // Cleanup on unmount
+  }, []);
+
   const handleMouseMove = (e) => {
     const card = e.currentTarget;
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top; 
 
-    // Update CSS variables for glow position
     card.style.setProperty("--mouse-x", `${x}px`);
     card.style.setProperty("--mouse-y", `${y}px`);
     card.classList.add("active");
@@ -34,22 +55,21 @@ function About() {
     card.classList.remove("active");
   };
   return (
-    <section className="c-space mt-20 xl:h-[170vh]">
-      <div className="grid xl:grid-cols-2 xl:grid-rows-1 md:grid-cols-2 grid-cols-1 gap-5 h-full">
-        <motion.div
-          variants={fadeIn("right", "spring", 0.25, 0.4)}
-          className="col-span-1 xl:row-span-1 grid-container1 card1"
+    <section className="mt-5 xl:h-[170vh]">
+      <div className="grid xl:grid-cols-2 md:grid-cols-2 xl:grid-rows-5 grid-cols-1 gap-5 h-full" ref={aboutRef}>
+        <div
+          className="xl:row-span-2 grid-container1 card1"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
         >
-          <div className="grid-container ">
+          <div className="grid-container">
             <img
               src="\assets\main.jpg"
               alt="grid 1"
-              className="w-fit sm:h-[276px] mb-3 h-fit object-contain rounded-full self-center"
+              className="w-fit sm:h-[276px] mb-4 h-fit object-contain rounded-full self-center"
             />
             <div>
-              <p className="text-xl font-semibold mb-2 text-white font-generalsans">
+              <p className="text-xl font-semibold text-white font-generalsans">
                 Hi, <b>I'm Sahil Kukreja!</b>
               </p>
               <p className="text-[#afb0b6] text-base font-generalsans">
@@ -58,28 +78,33 @@ function About() {
               </p>
             </div>
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          variants={fadeIn("right", "spring", 0.5, 0.4)}
-          className="col-span-1 card2 xl:row-span-1 grid-container1"
+        <div
+          className="card2 xl:row-span-2 grid-container1"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
         >
           <div className="grid-container">
             <div className="rounded-3xl w-full sm:h[326px] h-fit flex justify-center items-center">
               <Globe
-                height={326}
-                width={326}
+                height={250}
+                width={250}
                 backgroundColor="rgba(0,0,0,0)"
                 backgroundImageOpacity={0.5}
                 showAtmosphere
                 showGraticules
                 globeImageUrl="//unpkg.com/three-globe/example/img/earth-day.jpg"
                 bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
+                labelsData={[{
+                  lat:22.719568,
+                  lng:75.857727,
+                  size: 100,
+                  text: "Indore, India",
+                }]} 
               />
             </div>
-            <p className="text-xl font-semibold mb-2 text-white font-generalsans">
+            <p className="text-xl font-semibold text-white font-generalsans">
               I'm from India
             </p>
             <p className="text-[#afb0b6] text-base font-generalsans">
@@ -88,27 +113,25 @@ function About() {
               travelling,Always ready to interect and build network.
             </p>
           </div>
-        </motion.div>
-        <motion.div
-          variants={fadeIn("right", "spring", 0.8, 0.4)}
-          className="xl:col-span-1 xl:row-span-1 grid-container1 card3"
+        </div>
+        <div
+          className="grid-container1 xl:row-span-2 card3"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
         >
           <div className="grid-container">
-            <p className={"text-3xl font-semibold text-center text-white project"}>Tech I use</p>
+            <p className={"text-3xl font-semibold text-center text-white project"}>Technical Skills</p>
             <div className="flex flex-row flex-wrap justify-center gap-10">
               {technologies.map((tech) => (
-                <div className="w-20 h-20 mt-6" key={tech.name}>
+                <div className="w-24 h-24 mt-6" key={tech.name}>
                   <BallCanvas icon={tech.icon}></BallCanvas>
                 </div>
               ))}
             </div>
           </div>
-        </motion.div>
-        <motion.div
-          variants={fadeIn("right", "spring", 1.1, 0.4)}
-          className="xl:row-span-1 grid-container1 card4"
+        </div>
+        <div
+          className="xl:row-span-2 grid-container1 card4"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
         >
@@ -116,10 +139,10 @@ function About() {
             <img
               src="\assets\grid4.png"
               alt="grid-4"
-              className="w-full md:h-[126px] sm:h-[276px] h-fit object-cover sm:object-top"
+              className="w-full md:h-[126px] sm:h-[276px] h-full object-cover sm:object-top"
             />
             <div>
-              <p className="text-center mt-12 text-[#afb0b6] text-base font-generalsans">
+              <p className="text-center mt-16 text-[#afb0b6] text-base font-generalsans">
                 Contact me
               </p>
               <div className="copy-container" onClick={handleClick}>
@@ -162,7 +185,7 @@ function About() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
       <div className="c-space text-center"></div>
     </section>
